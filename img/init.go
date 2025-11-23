@@ -3,9 +3,9 @@ package img
 import (
 	"runtime"
 
+	"github.com/SunshineZzzz/purego-sdl3/internal/shared"
+	"github.com/SunshineZzzz/purego-sdl3/sdl"
 	"github.com/ebitengine/purego"
-	"github.com/jupiterrider/purego-sdl3/internal/shared"
-	"github.com/jupiterrider/purego-sdl3/sdl"
 )
 
 var (

@@ -1,9 +1,10 @@
+// Comment: C与Go之间的内存转换
+
 package mem
 
 import "unsafe"
 
-// Copy copies the values of a C array into a Go slice.
-// If the array is nil, this function returns nil.
+// 将C数组复制到Go切片中
 func Copy[T any, N ~int32](array *T, count N) []T {
 	if array == nil {
 		return nil
@@ -13,6 +14,7 @@ func Copy[T any, N ~int32](array *T, count N) []T {
 	return result
 }
 
+// 复制每个C指针所指向的底层数据到Go切片中
 func DeepCopy[T any, N ~int32](array **T, count N) []*T {
 	if array == nil {
 		return nil

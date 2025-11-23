@@ -1,3 +1,5 @@
+// Comment: C与Go之间的转换
+
 package convert
 
 import (
@@ -5,8 +7,7 @@ import (
 	"unsafe"
 )
 
-// ToBytePtr converts a Go string to a null-terminated C-style string by just appending a null byte,
-// if s doesn't already contain one.
+// 安全地将Go字符串转换为C风格的空终止字节数组，并返回指向第一个字节的指针
 func ToBytePtr(s string) *byte {
 	size := len(s) + 1
 	if index := strings.IndexByte(s, 0); index != -1 {
@@ -18,7 +19,7 @@ func ToBytePtr(s string) *byte {
 	return &result[0]
 }
 
-// ToBytePtrNullable does the same thing as [ToBytePtr], except that an empty string returns nil.
+// 同上，带空值检查，空字符串返回nil
 func ToBytePtrNullable(s string) *byte {
 	if len(s) == 0 {
 		return nil
@@ -26,7 +27,7 @@ func ToBytePtrNullable(s string) *byte {
 	return ToBytePtr(s)
 }
 
-// ToString converts a null-terminated C-style string into a Go string.
+// 将C风格的空终止字符串指针转换回Go字符串
 func ToString(p *byte) string {
 	if p == nil {
 		return ""
@@ -37,7 +38,7 @@ func ToString(p *byte) string {
 	return string(unsafe.Slice(p, i))
 }
 
-// ToStringSlice converts a null-terminated list of C-style strings to a slice of Go strings.
+// 空终止的字符串指针数组转换为Go的字符串切片，char *[]/char ** -> []string
 func ToStringSlice(pointers **byte) []string {
 	if pointers == nil {
 		return nil

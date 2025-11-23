@@ -1,3 +1,5 @@
+// Comment: 加载动态链接库并获取符号地址，主要用于非Windows系统
+
 //go:build !windows
 
 package shared

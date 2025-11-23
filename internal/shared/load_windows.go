@@ -1,3 +1,5 @@
+// Comment: 加载动态链接库并获取符号地址，主要用于Windows系统
+
 package shared
 
 import (
