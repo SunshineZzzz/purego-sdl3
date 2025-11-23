@@ -5,7 +5,7 @@ import (
 	"unsafe"
 
 	"github.com/ebitengine/purego"
-	"github.com/jupiterrider/purego-sdl3/internal/convert"
+	"github.com/SunshineZzzz/purego-sdl3/internal/convert"
 )
 
 const SoftwareRenderer = "software"

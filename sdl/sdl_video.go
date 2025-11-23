@@ -4,7 +4,7 @@ import (
 	"unsafe"
 
 	"github.com/ebitengine/purego"
-	"github.com/jupiterrider/purego-sdl3/internal/mem"
+	"github.com/SunshineZzzz/purego-sdl3/internal/mem"
 )
 
 // [DisplayID] is a unique ID for a display for the time it is connected to the system, and is never reused for the lifetime of the application.

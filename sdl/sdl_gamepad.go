@@ -3,7 +3,7 @@ package sdl
 import (
 	"unsafe"
 
-	"github.com/jupiterrider/purego-sdl3/internal/mem"
+	"github.com/SunshineZzzz/purego-sdl3/internal/mem"
 )
 
 type GamepadBindingType uint32

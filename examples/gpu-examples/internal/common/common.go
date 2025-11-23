@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/jupiterrider/purego-sdl3/sdl"
+	"github.com/SunshineZzzz/purego-sdl3/sdl"
 )
 
 func LoadShader(device *sdl.GPUDevice, shaderFilename string, samplerCount, uniformBufferCount, storageBufferCount, storageTextureCount uint32) *sdl.GPUShader {

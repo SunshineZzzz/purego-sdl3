@@ -1,6 +1,6 @@
 package main
 
-import "github.com/jupiterrider/purego-sdl3/sdl"
+import "github.com/SunshineZzzz/purego-sdl3/sdl"
 
 func main() {
 	defer sdl.Quit()
