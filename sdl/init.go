@@ -279,8 +279,8 @@ var (
 	// sdlGetCPUCacheLineSize                   func() int32
 	sdlGetCurrentAudioDriver  func() string
 	sdlGetCurrentCameraDriver func() string
-	// sdlGetCurrentDirectory                   func() string
-	sdlGetCurrentDisplayMode func(DisplayID) *DisplayMode
+	sdlGetCurrentDirectory    func() *byte
+	sdlGetCurrentDisplayMode  func(DisplayID) *DisplayMode
 	// sdlGetCurrentDisplayOrientation          func(DisplayID) DisplayOrientation
 	sdlGetCurrentRenderOutputSize func(*Renderer, *int32, *int32) bool
 	// sdlGetCurrentThreadID                    func() ThreadID
@@ -454,8 +454,8 @@ var (
 	sdlGetPointerProperty  func(PropertiesID, string, unsafe.Pointer) unsafe.Pointer
 	sdlGetPowerInfo        func(*int32, *int32) PowerState
 	sdlGetPreferredLocales func(*int32) **struct{ language, country *byte }
-	// sdlGetPrefPath                           func(string, string) string
-	sdlGetPrimaryDisplay func() DisplayID
+	sdlGetPrefPath         func(*byte, *byte) *byte
+	sdlGetPrimaryDisplay   func() DisplayID
 	// sdlGetPrimarySelectionText               func() string
 	// sdlGetProcessInput                       func(*Process) *IOStream
 	// sdlGetProcessOutput                      func(*Process) *IOStream
@@ -753,7 +753,7 @@ var (
 	// sdlMapRGBA                               func(*PixelFormatDetails, *Palette, uint8, uint8, uint8, uint8) uint32
 	sdlMapSurfaceRGB func(*Surface, uint8, uint8, uint8) uint32
 	// sdlMapSurfaceRGBA                        func(*Surface, uint8, uint8, uint8, uint8) uint32
-	// sdlMaximizeWindow                        func(*Window) bool
+	sdlMaximizeWindow func(*Window) bool
 	// sdlmemcmp                                func(unsafe.Pointer, unsafe.Pointer, uint64) int32
 	// sdlmemcpy                                func(unsafe.Pointer, unsafe.Pointer, uint64) unsafe.Pointer
 	// sdlmemmove                               func(unsafe.Pointer, unsafe.Pointer, uint64) unsafe.Pointer
@@ -764,7 +764,7 @@ var (
 	// sdlMetal_CreateView                      func(*Window) MetalView
 	// sdlMetal_DestroyView                     func(MetalView)
 	// sdlMetal_GetLayer                        func(MetalView) unsafe.Pointer
-	// sdlMinimizeWindow                        func(*Window) bool
+	sdlMinimizeWindow func(*Window) bool
 	// sdlMixAudio                              func(*uint8, *uint8, AudioFormat, uint32, float32) bool
 	// sdlmodf                                  func(float64, *double) float64
 	// sdlmodff                                 func(float32, *float32) float32
@@ -1505,7 +1505,7 @@ func init() {
 	// purego.RegisterLibFunc(&sdlGetCPUCacheLineSize, lib, "SDL_GetCPUCacheLineSize")
 	purego.RegisterLibFunc(&sdlGetCurrentAudioDriver, lib, "SDL_GetCurrentAudioDriver")
 	purego.RegisterLibFunc(&sdlGetCurrentCameraDriver, lib, "SDL_GetCurrentCameraDriver")
-	// purego.RegisterLibFunc(&sdlGetCurrentDirectory, lib, "SDL_GetCurrentDirectory")
+	purego.RegisterLibFunc(&sdlGetCurrentDirectory, lib, "SDL_GetCurrentDirectory")
 	purego.RegisterLibFunc(&sdlGetCurrentDisplayMode, lib, "SDL_GetCurrentDisplayMode")
 	// purego.RegisterLibFunc(&sdlGetCurrentDisplayOrientation, lib, "SDL_GetCurrentDisplayOrientation")
 	purego.RegisterLibFunc(&sdlGetCurrentRenderOutputSize, lib, "SDL_GetCurrentRenderOutputSize")
@@ -1680,7 +1680,7 @@ func init() {
 	purego.RegisterLibFunc(&sdlGetPointerProperty, lib, "SDL_GetPointerProperty")
 	purego.RegisterLibFunc(&sdlGetPowerInfo, lib, "SDL_GetPowerInfo")
 	purego.RegisterLibFunc(&sdlGetPreferredLocales, lib, "SDL_GetPreferredLocales")
-	// purego.RegisterLibFunc(&sdlGetPrefPath, lib, "SDL_GetPrefPath")
+	purego.RegisterLibFunc(&sdlGetPrefPath, lib, "SDL_GetPrefPath")
 	purego.RegisterLibFunc(&sdlGetPrimaryDisplay, lib, "SDL_GetPrimaryDisplay")
 	// purego.RegisterLibFunc(&sdlGetPrimarySelectionText, lib, "SDL_GetPrimarySelectionText")
 	// purego.RegisterLibFunc(&sdlGetProcessInput, lib, "SDL_GetProcessInput")
@@ -1979,7 +1979,7 @@ func init() {
 	// purego.RegisterLibFunc(&sdlMapRGBA, lib, "SDL_MapRGBA")
 	purego.RegisterLibFunc(&sdlMapSurfaceRGB, lib, "SDL_MapSurfaceRGB")
 	// purego.RegisterLibFunc(&sdlMapSurfaceRGBA, lib, "SDL_MapSurfaceRGBA")
-	// purego.RegisterLibFunc(&sdlMaximizeWindow, lib, "SDL_MaximizeWindow")
+	purego.RegisterLibFunc(&sdlMaximizeWindow, lib, "SDL_MaximizeWindow")
 	// purego.RegisterLibFunc(&sdlmemcmp, lib, "SDL_memcmp")
 	// purego.RegisterLibFunc(&sdlmemcpy, lib, "SDL_memcpy")
 	// purego.RegisterLibFunc(&sdlmemmove, lib, "SDL_memmove")
@@ -1990,7 +1990,7 @@ func init() {
 	// purego.RegisterLibFunc(&sdlMetal_CreateView, lib, "SDL_Metal_CreateView")
 	// purego.RegisterLibFunc(&sdlMetal_DestroyView, lib, "SDL_Metal_DestroyView")
 	// purego.RegisterLibFunc(&sdlMetal_GetLayer, lib, "SDL_Metal_GetLayer")
-	// purego.RegisterLibFunc(&sdlMinimizeWindow, lib, "SDL_MinimizeWindow")
+	purego.RegisterLibFunc(&sdlMinimizeWindow, lib, "SDL_MinimizeWindow")
 	// purego.RegisterLibFunc(&sdlMixAudio, lib, "SDL_MixAudio")
 	// purego.RegisterLibFunc(&sdlmodf, lib, "SDL_modf")
 	// purego.RegisterLibFunc(&sdlmodff, lib, "SDL_modff")
