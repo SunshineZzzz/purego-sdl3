@@ -3,7 +3,7 @@ package sdl
 import (
 	"unsafe"
 
-	"github.com/jupiterrider/purego-sdl3/internal/convert"
+	"github.com/SunshineZzzz/purego-sdl3/internal/convert"
 )
 
 type EnumerationResult uint32
