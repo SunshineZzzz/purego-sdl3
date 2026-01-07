@@ -254,9 +254,9 @@ func ResumeAudioStreamDevice(stream *AudioStream) bool {
 //	return sdlSetAudioStreamFrequencyRatio(stream, ratio)
 // }
 
-// func SetAudioStreamGain(stream *AudioStream, gain float32) bool {
-//	return sdlSetAudioStreamGain(stream, gain)
-// }
+func SetAudioStreamGain(stream *AudioStream, gain float32) bool {
+	return sdlSetAudioStreamGain(stream, gain)
+}
 
 // func SetAudioStreamGetCallback(stream *AudioStream, callback AudioStreamCallback, userdata unsafe.Pointer) bool {
 //	return sdlSetAudioStreamGetCallback(stream, callback, userdata)

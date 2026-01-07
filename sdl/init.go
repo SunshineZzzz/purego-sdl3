@@ -930,7 +930,7 @@ var (
 	// sdlSetAudioPostmixCallback               func(AudioDeviceID, AudioPostmixCallback, unsafe.Pointer) bool
 	// sdlSetAudioStreamFormat                  func(*AudioStream, *AudioSpec, *AudioSpec) bool
 	// sdlSetAudioStreamFrequencyRatio          func(*AudioStream, float32) bool
-	// sdlSetAudioStreamGain                    func(*AudioStream, float32) bool
+	sdlSetAudioStreamGain func(*AudioStream, float32) bool
 	// sdlSetAudioStreamGetCallback             func(*AudioStream, AudioStreamCallback, unsafe.Pointer) bool
 	// sdlSetAudioStreamInputChannelMap         func(*AudioStream, *int32, int32) bool
 	// sdlSetAudioStreamOutputChannelMap        func(*AudioStream, *int32, int32) bool
@@ -2156,7 +2156,7 @@ func init() {
 	// purego.RegisterLibFunc(&sdlSetAudioPostmixCallback, lib, "SDL_SetAudioPostmixCallback")
 	// purego.RegisterLibFunc(&sdlSetAudioStreamFormat, lib, "SDL_SetAudioStreamFormat")
 	// purego.RegisterLibFunc(&sdlSetAudioStreamFrequencyRatio, lib, "SDL_SetAudioStreamFrequencyRatio")
-	// purego.RegisterLibFunc(&sdlSetAudioStreamGain, lib, "SDL_SetAudioStreamGain")
+	purego.RegisterLibFunc(&sdlSetAudioStreamGain, lib, "SDL_SetAudioStreamGain")
 	// purego.RegisterLibFunc(&sdlSetAudioStreamGetCallback, lib, "SDL_SetAudioStreamGetCallback")
 	// purego.RegisterLibFunc(&sdlSetAudioStreamInputChannelMap, lib, "SDL_SetAudioStreamInputChannelMap")
 	// purego.RegisterLibFunc(&sdlSetAudioStreamOutputChannelMap, lib, "SDL_SetAudioStreamOutputChannelMap")
