@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"unsafe"
 
+	"github.com/SunshineZzzz/purego-sdl3/internal/convert"
 	"github.com/ebitengine/purego"
-	"github.com/jupiterrider/purego-sdl3/internal/convert"
 )
 
 // [LogPriority] is a structure specifying the predefined log priorities.
