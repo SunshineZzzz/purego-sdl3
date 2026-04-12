@@ -3,8 +3,8 @@ package sdl
 import (
 	"unsafe"
 
-	"github.com/SunshineZzzz/purego-sdl3/internal/mem"
 	"github.com/ebitengine/purego"
+	"github.com/SunshineZzzz/purego-sdl3/internal/mem"
 )
 
 const (
@@ -838,9 +838,9 @@ func GLGetCurrentWindow() *Window {
 //	return sdlGL_LoadLibrary(path)
 // }
 
-func GL_MakeCurrent(window *Window, context GLContext) bool {
-	return sdlGL_MakeCurrent(window, context)
-}
+// func GL_MakeCurrent(window *Window, context GLContext) bool {
+//	return sdlGL_MakeCurrent(window, context)
+// }
 
 // func GL_ResetAttributes()  {
 //	sdlGL_ResetAttributes()
