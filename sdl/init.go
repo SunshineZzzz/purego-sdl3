@@ -612,7 +612,7 @@ var (
 	sdlGLGetCurrentContext func() GLContext
 	sdlGLGetCurrentWindow  func() *Window
 	// sdlGL_GetProcAddress                     func(string) FunctionPointer
-	// sdlGL_GetSwapInterval                    func(*int32) bool
+	sdlGL_GetSwapInterval func(*int32) bool
 	// sdlGL_LoadLibrary                        func(string) bool
 	// sdlGL_MakeCurrent                        func(*Window, GLContext) bool
 	// sdlGL_ResetAttributes                    func()
@@ -1859,7 +1859,7 @@ func init() {
 	purego.RegisterLibFunc(&sdlGLGetCurrentContext, lib, "SDL_GL_GetCurrentContext")
 	purego.RegisterLibFunc(&sdlGLGetCurrentWindow, lib, "SDL_GL_GetCurrentWindow")
 	// purego.RegisterLibFunc(&sdlGL_GetProcAddress, lib, "SDL_GL_GetProcAddress")
-	// purego.RegisterLibFunc(&sdlGL_GetSwapInterval, lib, "SDL_GL_GetSwapInterval")
+	purego.RegisterLibFunc(&sdlGL_GetSwapInterval, lib, "SDL_GL_GetSwapInterval")
 	// purego.RegisterLibFunc(&sdlGL_LoadLibrary, lib, "SDL_GL_LoadLibrary")
 	// purego.RegisterLibFunc(&sdlGL_MakeCurrent, lib, "SDL_GL_MakeCurrent")
 	// purego.RegisterLibFunc(&sdlGL_ResetAttributes, lib, "SDL_GL_ResetAttributes")

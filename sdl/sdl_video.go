@@ -3,8 +3,8 @@ package sdl
 import (
 	"unsafe"
 
-	"github.com/ebitengine/purego"
 	"github.com/SunshineZzzz/purego-sdl3/internal/mem"
+	"github.com/ebitengine/purego"
 )
 
 const (
@@ -830,9 +830,9 @@ func GLGetCurrentWindow() *Window {
 //	return sdlGL_GetProcAddress(proc)
 // }
 
-// func GL_GetSwapInterval(interval *int32) bool {
-//	return sdlGL_GetSwapInterval(interval)
-// }
+func GL_GetSwapInterval(interval *int32) bool {
+	return sdlGL_GetSwapInterval(interval)
+}
 
 // func GL_LoadLibrary(path string) bool {
 //	return sdlGL_LoadLibrary(path)
