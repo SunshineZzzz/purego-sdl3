@@ -614,7 +614,7 @@ var (
 	// sdlGL_GetProcAddress                     func(string) FunctionPointer
 	// sdlGL_GetSwapInterval                    func(*int32) bool
 	// sdlGL_LoadLibrary                        func(string) bool
-	// sdlGL_MakeCurrent                        func(*Window, GLContext) bool
+	sdlGL_MakeCurrent func(*Window, GLContext) bool
 	// sdlGL_ResetAttributes                    func()
 	sdlGLSetAttribute    func(GLAttr, int32) bool
 	sdlGLSetSwapInterval uintptr
@@ -1861,7 +1861,7 @@ func init() {
 	// purego.RegisterLibFunc(&sdlGL_GetProcAddress, lib, "SDL_GL_GetProcAddress")
 	// purego.RegisterLibFunc(&sdlGL_GetSwapInterval, lib, "SDL_GL_GetSwapInterval")
 	// purego.RegisterLibFunc(&sdlGL_LoadLibrary, lib, "SDL_GL_LoadLibrary")
-	// purego.RegisterLibFunc(&sdlGL_MakeCurrent, lib, "SDL_GL_MakeCurrent")
+	purego.RegisterLibFunc(&sdlGL_MakeCurrent, lib, "SDL_GL_MakeCurrent")
 	// purego.RegisterLibFunc(&sdlGL_ResetAttributes, lib, "SDL_GL_ResetAttributes")
 	purego.RegisterLibFunc(&sdlGLSetAttribute, lib, "SDL_GL_SetAttribute")
 	sdlGLSetSwapInterval = shared.Get(lib, "SDL_GL_SetSwapInterval")
