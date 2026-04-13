@@ -838,9 +838,12 @@ func GL_GetSwapInterval(interval *int32) bool {
 //	return sdlGL_LoadLibrary(path)
 // }
 
-// func GL_MakeCurrent(window *Window, context GLContext) bool {
-//	return sdlGL_MakeCurrent(window, context)
-// }
+// [GLMakeCurrent] sets up an OpenGL context for rendering into an OpenGL window.
+//
+// [GLMakeCurrent]: https://wiki.libsdl.org/SDL3/SDL_GL_MakeCurrent
+func GLMakeCurrent(window *Window, context GLContext) bool {
+	return sdlGLMakeCurrent(window, context)
+}
 
 // func GL_ResetAttributes()  {
 //	sdlGL_ResetAttributes()
